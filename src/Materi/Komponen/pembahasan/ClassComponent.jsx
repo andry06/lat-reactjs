@@ -8,11 +8,13 @@ class ClassComponent extends React.Component {
     }
 
     handlePlus = () => {
-        this.setState({value : this.state.value + 1})
+        
+            this.setState({value : this.state.value + 1})
+        
     }
 
     handleMinus = () => {
-        if(this.state.valu > 0){
+        if(this.state.value > 0){
             this.setState({value : this.state.value - 1})
         }
     }
