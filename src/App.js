@@ -2,8 +2,9 @@
 // import Reusable from "./Materi/Reusable";
 // import Styling from "./Materi/Styling";
 // import Rendering from "./Materi/Rendering";
+// import Form from "./Materi/Form";
 
-import Form from "./Materi/Form";
+import Lifecycle from "./Materi/Lifecycle";
 
 
 function App() {
@@ -13,7 +14,8 @@ function App() {
       {/* <Styling /> */}
       {/* <Reusable /> */}
       {/* <Rendering /> */}
-      <Form />
+      {/* <Form /> */}
+      <Lifecycle />
     </div>
   );
 }

@@ -8,10 +8,9 @@ const Input = ({label, type, name, onChange}) => {
                 {label}: 
             </label>
             <br />
-            <input type={type} name={name} onChange={e => onChange(e.target.value)}/>
+            <input type={type} name={name} className="form-control"  onChange={e => onChange(e.target.value)}/>
             <br />
         </div>
-        
     )
 }
 
@@ -50,9 +49,26 @@ export default class Validation extends React.Component {
                 ...validation.errors.get('email'),
                 ...validation.errors.get('password')
             ]
-        })
+        }, () => { 
+            if(this.state.errors.length <= 0){
+                alert(`
+                Email : ${this.state.email}
+                Password : ${this.state.password}
+                `);
+                this.setState({
+                    email:'',
+                    password: '',
+                    errors:[]
+                })
+            }
+        });
+        
+        
+
+        
        
     }
+    
 
     render(){
         const style = {
@@ -69,7 +85,7 @@ export default class Validation extends React.Component {
                 
                 <form onSubmit={this.handleSubmit}>
                     <h4>Login Page</h4>
-                    <Input type="email" name="email" label="Email" 
+                    <Input type="email" name="email" label="Email"
                     onChange={value => this.setState({email: value})} />
                     <Input type="password" name="password" label="Password"
                     onChange={value => this.setState({password: value})}/>
